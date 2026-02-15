@@ -34,14 +34,17 @@ For each topic:
 4. Council check (optional: query Perplexity for gaps)
 5. Deep analysis (why it matters, implications, what's next)
 
-### Output
-- Email digest to YOUR-EMAIL@example.com
-- Format: HTML with sections, analysis, sources
-- Include "What's Missing" section
-- Save to ~/workspace/digests/YYYY-MM-DD-morning.html
+### Output (Web-First)
+1. Generate full HTML digest
+2. Save to `~/workspace/morning-digest-site/digests/YYYY-MM-DD.html`
+3. Update `index.html` with new entry (date, title, 2-line summary)
+4. Git commit + push to trigger Vercel deploy
+5. Email 2-line summary + link to YOUR-EMAIL@example.com
+
+Site: https://your-digest-site.vercel.app
 
 ### Optional: Audio Version
 - Generate via TTS (ElevenLabs, OpenAI, etc.)
-- Email as separate attachment
-- Save to ~/workspace/digests/YYYY-MM-DD-morning.mp3
+- Embed audio player in the web page
+- Reference in email: "🎧 Audio version available"
 ```

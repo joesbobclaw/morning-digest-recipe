@@ -71,21 +71,41 @@ Track: New papers, funding announcements, researcher moves, tooling releases
 
 ### 3. Output Format
 
-**Email (HTML recommended):**
-- Clean, scannable design
-- Sections per topic
-- Key stories with analysis
-- "What's Missing" section noting limitations
-- Links to sources
+**Web-first approach (recommended):**
+1. Generate full HTML digest
+2. Deploy to persistent site (Vercel, Netlify, GitHub Pages)
+3. Email contains only:
+   - 2-line summary
+   - Link to full digest
 
-**Save a copy:**
-- Archive to `~/workspace/digests/YYYY-MM-DD-topic.html`
-- Enables future reference and pattern tracking
+**Benefits:**
+- Lightweight emails that don't get clipped
+- Persistent, browsable archive
+- Shareable links
+- Audio can be embedded in the web version
+
+**Site structure:**
+```
+morning-digest-site/
+├── index.html          # List of all digests
+└── digests/
+    ├── 2026-02-15.html
+    ├── 2026-02-14.html
+    └── ...
+```
+
+**Update index.html** when adding new digests:
+```javascript
+const digests = [
+  { date: "2026-02-15", title: "February 15, 2026", summary: "Two line summary...", file: "2026-02-15.html" },
+  // older digests below...
+];
+```
 
 **Audio version (optional):**
 - Generate via TTS (ElevenLabs, OpenAI, etc.)
+- Embed in the web page
 - Great for commute listening
-- Email as separate attachment or link
 
 ### 4. Scheduling
 
